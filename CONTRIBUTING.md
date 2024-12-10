@@ -16,34 +16,72 @@ Thank you for your interest in contributing to the Learn Rust repository! We wel
 3. **Create a New Branch**:
    ```bash
    git checkout -b feature/your-feature-name
+
+4. **Install Dependencies**:
+   ```bash
+   pnpm install
    ```
-4. Make Your Changes:
+   This will install all development dependencies including husky for commit message validation.
+
+5. **Make Your Changes**:
 
 - Follow the chapter structure and style guidelines.
 - Ensure your contributions are clear, well-documented, and add value to the learning path.
 - If adding code examples, make sure they compile and run correctly.
 
-5. **Commit Your Changes**:
+6. **Commit Your Changes**:
 
+   We use conventional commits to standardize our commit messages. The format is:
    ```bash
-    git add .
-    git commit -m "docs:Add feature/description of changes"
+   type(scope): subject
    ```
 
-6. **Push to Your Fork:**:
+   Types:
+   - `feat`: New features
+   - `fix`: Bug fixes
+   - `docs`: Documentation changes
+   - `chore`: Maintenance tasks
+   - `style`: Code style changes
+   - `refactor`: Code refactoring
+   - `ci`: CI/CD changes
+   - `test`: Adding or modifying tests
+   - `perf`: Performance improvements
+   - `revert`: Reverting changes
+
+   Scopes:
+   - `core`: Core functionality
+   - `docs`: Documentation
+   - `examples`: Example code
+   - `server`: Server-related
+   - `db`: Database
+   - `auth`: Authentication
+   - `tests`: Testing
+   - `config`: Configuration
+
+   Examples:
+   ```bash
+   git add .
+   git commit -m "feat(server): add basic HTTP server implementation"
+   git commit -m "docs(core): update installation instructions"
+   git commit -m "fix(auth): resolve token validation issue"
+   ```
+
+   Note: The repository is configured with commitlint and husky to enforce these conventions. Commits that don't follow this format will be rejected.
+
+7. **Push to Your Fork:**:
 
    ```bash
    git push origin feature/your-feature-name
    ```
 
-7. **Create a Pull Request**:
+8. **Create a Pull Request**:
 
    - Navigate to the original learn-rust-be repository on GitHub.
    - Click "New Pull Request" and select your branch.
    - Provide a clear description of your changes and the rationale behind them.
    - Submit the pull request for review.
 
-8. **Code Review**:
+9. **Code Review**:
    - The maintainers will review your pull request.
    - Provide feedback and suggestions for improvement.
    - Make necessary changes based on feedback.
