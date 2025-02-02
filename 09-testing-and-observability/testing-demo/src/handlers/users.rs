@@ -46,8 +46,8 @@ pub async fn get_user(id: web::Path<i32>) -> impl Responder {
     // Simulate fetching user
     let user = User {
         id: *id,
-        name: "Test User".to_string(),
-        email: "test@example.com".to_string(),
+        name: "Dzikri Syairozi".to_string(),
+        email: "dzikrisyairozi@example.com".to_string(),
     };
 
     HttpResponse::Ok().json(user)
