@@ -24,7 +24,7 @@ A comprehensive demonstration of PostgreSQL database integration with Actix Web,
 1. Install PostgreSQL:
 
 Using Docker:
-```
+```bash
 docker run --name postgres-demo \
   -e POSTGRES_USER=my_user \
   -e POSTGRES_PASSWORD=my_password \
@@ -34,7 +34,7 @@ docker run --name postgres-demo \
 ```
 
 For Ubuntu/Debian:
-```
+```bash
 # Install PostgreSQL
 sudo apt update
 sudo apt install postgresql postgresql-contrib
@@ -58,7 +58,7 @@ psql -h localhost -U my_user -d my_database
 ```
 
 For macOS:
-```
+```bash
 # Install using Homebrew
 brew install postgresql@14
 
@@ -74,7 +74,7 @@ GRANT ALL PRIVILEGES ON DATABASE my_database TO my_user;
 ```
 
 For Windows:
-```
+```bash
 # Download and install PostgreSQL from official website
 https://www.postgresql.org/download/windows/
 
@@ -89,7 +89,7 @@ GRANT ALL PRIVILEGES ON DATABASE my_database TO my_user;
 ```
 
 Verify Installation:
-```
+```bash
 # Test connection with new user
 psql -h localhost -U my_user -d my_database
 
@@ -100,13 +100,13 @@ psql -h localhost -U my_user -d my_database
 ```
 
 2. Create `.env` file:
-```
+```bash
 DATABASE_URL=postgres://my_user:my_password@localhost/my_database
 RUST_LOG=debug
 ```
 
 3. Create and run migrations:
-```
+```bash
 # Install SQLx CLI
 cargo install sqlx-cli
 
@@ -118,14 +118,14 @@ sqlx migrate run
 ```
 
 4. Start the server:
-```
+```bash
 cargo run
 ```
 
 ## API Endpoints
 
 ### 1. Create Product
-```
+```bash
 curl -X POST http://localhost:8080/api/v1/products \
   -H "Content-Type: application/json" \
   -d '{
@@ -137,12 +137,12 @@ curl -X POST http://localhost:8080/api/v1/products \
 ```
 
 ### 2. Get Product
-```
+```bash
 curl http://localhost:8080/api/v1/products/1
 ```
 
 ### 3. List Products (with pagination)
-```
+```bash
 # Default pagination (10 items per page)
 curl http://localhost:8080/api/v1/products
 
@@ -151,7 +151,7 @@ curl "http://localhost:8080/api/v1/products?limit=20&offset=40"
 ```
 
 ### 4. Update Product
-```
+```bash
 curl -X PUT http://localhost:8080/api/v1/products/1 \
   -H "Content-Type: application/json" \
   -d '{
@@ -161,14 +161,14 @@ curl -X PUT http://localhost:8080/api/v1/products/1 \
 ```
 
 ### 5. Delete Product
-```
+```bash
 curl -X DELETE http://localhost:8080/api/v1/products/1
 ```
 
 ## Response Formats
 
 ### Success Response
-```
+```bash
 {
   "success": true,
   "data": {
@@ -185,7 +185,7 @@ curl -X DELETE http://localhost:8080/api/v1/products/1
 ```
 
 ### Error Response
-```
+```bash
 {
   "success": false,
   "error": "Validation error: price must be greater than 0"
@@ -206,7 +206,7 @@ curl -X DELETE http://localhost:8080/api/v1/products/1
 
 ## Database Schema
 
-```
+```bash
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
